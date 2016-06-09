@@ -18,7 +18,7 @@ android {
 
         }
         release {
-            storeFile file("../app/releasekey.jks")
+            storeFile file("../app/debugkey.jks")
             storePassword "onlinerrent"
             keyAlias "rent"
             keyPassword "onlinerrent"

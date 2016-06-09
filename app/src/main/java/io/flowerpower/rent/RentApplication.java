@@ -7,7 +7,7 @@ import timber.log.Timber;
 /**
  * Created by Andrew Kuksov on 6/7/16.
  */
-public class ApplicationLoader extends Application {
+public class RentApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
