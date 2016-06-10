@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Rent</string>
+
+    <!--FilterRentFragment-->
+    <string name="apartment">Apartment</string>
+    <string name="room">Room</string>
+    <string name="one_room">1</string>
+    <string name="two_room">2</string>
+    <string name="three_room">3</string>
+    <string name="four_more_room">4+</string>
+    <string name="owner_only">Owner only</string>
+
 </resources>

@@ -1,5 +1,8 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_default_padding">16dp</dimen>
+    <dimen name="widget_default_text_size">16sp</dimen>
+
+    <!--FilterRentFragment-->
+    <dimen name="filter_element_height">48dp</dimen>
+
 </resources>
