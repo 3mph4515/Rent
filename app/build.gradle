@@ -15,7 +15,10 @@ android {
     }
     signingConfigs {
         debug {
-
+            storeFile file("../app/debugkey.jks")
+            storePassword "onlinerrent"
+            keyAlias "rent"
+            keyPassword "onlinerrent"
         }
         release {
             storeFile file("../app/debugkey.jks")
