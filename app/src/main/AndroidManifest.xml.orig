@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.flowerpower.rent">
 
+<<<<<<< HEAD
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+=======
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true"/>
+>>>>>>> 4bf47ab777ac19c3a8164ccf1666ca7d7149e57d
 
     <application
         android:name=".RentApplication"
@@ -25,7 +40,12 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
+<<<<<<< HEAD
+            android:value="AIzaSyBfAPnvLt-2KRcdcPJAoEjn6tRMlqjySNA" />
+
+=======
             android:value="AIzaSyBfAPnvLt-2KRcdcPJAoEjn6tRMlqjySNA"/>
+>>>>>>> 4bf47ab777ac19c3a8164ccf1666ca7d7149e57d
     </application>
 
 </manifest>
