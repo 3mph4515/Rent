@@ -2,7 +2,103 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="500dp"
-    android:background="#ffff00"
-    android:orientation="vertical">
+    android:clickable="true"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_default_padding">
+
+    <LinearLayout
+        android:id="@+id/container_rent_type"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_element_height">
+
+        <CheckBox
+            android:id="@+id/rb_flat"
+            style="@style/Widget.CheckBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/apartment" />
+
+        <CheckBox
+            android:id="@+id/rb_room"
+            style="@style/Widget.CheckBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:text="@string/room" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_room_type"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_element_height"
+        android:layout_marginTop="1dp">
+
+        <CheckBox
+            android:id="@+id/rb_1_room"
+            style="@style/Widget.CheckBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/one_room" />
+
+        <CheckBox
+            android:id="@+id/rb_2_room"
+            style="@style/Widget.CheckBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:text="@string/two_room" />
+
+        <CheckBox
+            android:id="@+id/rb_3_room"
+            style="@style/Widget.CheckBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:text="@string/three_room" />
+
+        <CheckBox
+            android:id="@+id/rb_4more_room"
+            style="@style/Widget.CheckBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:text="@string/four_more_room" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_owner_only"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_element_height"
+        android:layout_marginTop="1dp">
+
+        <CheckBox
+            android:id="@+id/rb_is_owner"
+            style="@style/Widget.CheckBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/owner_only" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_metro"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_element_height"
+        android:layout_marginTop="1dp">
+
+        <Spinner
+            android:id="@+id/spn_metro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </LinearLayout>
