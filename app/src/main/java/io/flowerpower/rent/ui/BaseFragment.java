@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
 
@@ -14,10 +15,7 @@ import rx.subscriptions.CompositeSubscription;
 public abstract class BaseFragment extends Fragment {
 
     private final CompositeSubscription compositeSubscriptionForOnStop = new CompositeSubscription();
-
-    protected void unsubscribeOnStop(Subscription subscription) {
-        compositeSubscriptionForOnStop.add(subscription);
-    }
+    private Unbinder unbinder;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -31,8 +29,22 @@ public abstract class BaseFragment extends Fragment {
         super.onStop();
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+    protected void unsubscribeOnStop(Subscription subscription) {
+        compositeSubscriptionForOnStop.add(subscription);
+    }
+
+    public static String getFragmentTagForClass(Class<? extends Fragment> clazz) {
+        return clazz.getCanonicalName();
+    }
+
     private void bindViews(final View view) {
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
     }
 
 }
