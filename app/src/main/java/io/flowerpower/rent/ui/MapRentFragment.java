@@ -6,9 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
 
 import butterknife.BindView;
 import io.flowerpower.rent.R;
@@ -19,7 +22,10 @@ import timber.log.Timber;
  */
 public class MapRentFragment extends BaseFragment implements OnMapReadyCallback {
 
-    private GoogleMap map;
+    private final LatLng MINSK_LOCATION = new LatLng(53.9045, 27.5615);
+    private final float DEFAULT_ZOOM = 11.0f;
+
+    private GoogleMap googleMap;
     @BindView(R.id.map_view) MapView mapView;
 
     @Override
@@ -66,7 +72,12 @@ public class MapRentFragment extends BaseFragment implements OnMapReadyCallback 
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        this.map = googleMap;
+        this.googleMap = googleMap;
         mapView.onResume();
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(MINSK_LOCATION)
+                .zoom(DEFAULT_ZOOM)
+                .build();
+        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
 }

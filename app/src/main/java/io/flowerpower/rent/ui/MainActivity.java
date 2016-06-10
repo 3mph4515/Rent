@@ -3,7 +3,6 @@ package io.flowerpower.rent.ui;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
@@ -30,9 +29,6 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initViews() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.filters_container));
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
@@ -55,7 +51,6 @@ public class MainActivity extends BaseActivity {
                         break;
                 }
             }
-
 
             @Override
             public void onSlide(View bottomSheet, float slideOffset) {
