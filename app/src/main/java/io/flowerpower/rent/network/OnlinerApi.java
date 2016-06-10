@@ -1,6 +1,7 @@
 package io.flowerpower.rent.network;
 
-import io.flowerpower.rent.model.ApartmentsResponse;
+import io.flowerpower.rent.model.apartment.ApartmentsResponse;
+import io.flowerpower.rent.model.clustering.PointsResponse;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -62,16 +63,18 @@ public class OnlinerApi {
                                                      @Query("bounds[rt][lat]") double rtLat, @Query("bounds[rt][long]") double rtLong
         );
 
-        @Headers("Accept: application/json")
+        @Headers("Accept: application/vnd.geo+json; charset=utf-8")
         @GET("points/")
-        Observable<ApartmentsResponse> getPoints(@Query("bounds[lb][lat]") double lbLat, @Query("bounds[lb][long]") double lbLong,
-                                                 @Query("bounds[rt][lat]") double rtLat, @Query("bounds[rt][long]") double rtLong
+        Observable<PointsResponse> getPoints(@Query("bounds[lb][lat]") double lbLat, @Query("bounds[lb][long]") double lbLong,
+                                             @Query("bounds[rt][lat]") double rtLat, @Query("bounds[rt][long]") double rtLong
         );
-
     }
 
     public Observable<ApartmentsResponse> getApartments(double lbLat, double lbLong, double rtLat, double rtLong) {
         return service.getApartments(lbLat, lbLong, rtLat, rtLong);
     }
 
+    public Observable<PointsResponse> getPoints(double lbLat, double lbLong, double rtLat, double rtLong) {
+        return service.getPoints(lbLat, lbLong, rtLat, rtLong);
+    }
 }

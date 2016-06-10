@@ -1,4 +1,4 @@
-package io.flowerpower.rent.model;
+package io.flowerpower.rent.model.apartment;
 
 import android.os.Parcel;
 import android.os.Parcelable;
