@@ -1,4 +1,4 @@
-package io.flowerpower.rent.ui;
+package io.flowerpower.rent.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

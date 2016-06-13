@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
+import io.flowerpower.rent.ui.fragment.BaseFragment;
+
 /**
  * Created by Raman Branavitski on 6/10/16.
  */

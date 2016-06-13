@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 
 import io.flowerpower.rent.R;
+import io.flowerpower.rent.ui.fragment.BaseFragment;
+import io.flowerpower.rent.ui.fragment.FilterRentFragment;
+import io.flowerpower.rent.ui.fragment.MapRentFragment;
 
 
 public class MainActivity extends BaseActivity {
@@ -14,7 +17,7 @@ public class MainActivity extends BaseActivity {
     private BottomSheetBehavior bottomSheetBehavior;
     private FragmentManager fragmentManager;
     private MapRentFragment mapFragment;
-    private FiltersRentFragment filtersFragment;
+    private FilterRentFragment filtersFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +70,10 @@ public class MainActivity extends BaseActivity {
         return mapFragment;
     }
 
-    private FiltersRentFragment getFiltersFragment() {
-        filtersFragment = (FiltersRentFragment) fragmentManager.findFragmentByTag(BaseFragment.getFragmentTagForClass(FiltersRentFragment.class));
+    private FilterRentFragment getFiltersFragment() {
+        filtersFragment = (FilterRentFragment) fragmentManager.findFragmentByTag(BaseFragment.getFragmentTagForClass(FilterRentFragment.class));
         if (filtersFragment == null) {
-            filtersFragment = new FiltersRentFragment();
+            filtersFragment = new FilterRentFragment();
         }
         return filtersFragment;
     }
