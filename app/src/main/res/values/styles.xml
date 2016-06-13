@@ -4,6 +4,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <!--<item name="colorControlActivated">@color/accent</item>-->
+        <!--<item name="colorControlHighlight">@color/accent</item>-->
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
 
@@ -17,7 +20,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Widget">
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/widget_text_color</item>
         <item name="android:textSize">@dimen/widget_default_text_size</item>
         <item name="android:background">@drawable/base_widget_bg</item>
         <item name="android:gravity">center_vertical</item>
@@ -27,6 +30,13 @@
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:clickable">true</item>
+    </style>
+
+    <style name="FilterLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
     </style>
 
 </resources>

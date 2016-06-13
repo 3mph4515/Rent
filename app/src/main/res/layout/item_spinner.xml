@@ -5,5 +5,5 @@
     android:gravity="center_vertical"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:textColor="@color/textColorPrimary"
+    android:textColor="@color/colorPrimary"
     android:textSize="@dimen/widget_default_text_size" />
