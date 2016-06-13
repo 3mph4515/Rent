@@ -1,6 +1,7 @@
 package io.flowerpower.rent.network;
 
 import io.flowerpower.rent.model.apartment.ApartmentsResponse;
+import io.flowerpower.rent.model.apartment.SpecificAdvert;
 import io.flowerpower.rent.model.clustering.PointsResponse;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -9,6 +10,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 import timber.log.Timber;
@@ -18,7 +20,7 @@ import timber.log.Timber;
  */
 public class OnlinerApi {
 
-    private final static String API_URL = "https://ak.api.onliner.by/search/";
+    private final static String API_URL = "https://ak.api.onliner.by/";
     private OnlinerService service;
 
     private static volatile OnlinerApi Instance = null;
@@ -58,23 +60,32 @@ public class OnlinerApi {
 
     interface OnlinerService {
         @Headers("Accept: application/json")
-        @GET("apartments/")
+        @GET("search/apartments/")
         Observable<ApartmentsResponse> getApartments(@Query("bounds[lb][lat]") double lbLat, @Query("bounds[lb][long]") double lbLong,
                                                      @Query("bounds[rt][lat]") double rtLat, @Query("bounds[rt][long]") double rtLong
         );
 
         @Headers("Accept: application/vnd.geo+json; charset=utf-8")
-        @GET("points/")
+        @GET("search/points/")
         Observable<PointsResponse> getPoints(@Query("bounds[lb][lat]") double lbLat, @Query("bounds[lb][long]") double lbLong,
-                                             @Query("bounds[rt][lat]") double rtLat, @Query("bounds[rt][long]") double rtLong
+                                             @Query("bounds[rt][lat]") double rtLat, @Query("bounds[rt][long]") double rtLong,
+                                             @Query("price[min]") int priceMin, @Query("price[max]") int priceMax
         );
+
+        @Headers("Accept: application/json")
+        @GET("apartments/{id}")
+        Observable<SpecificAdvert> getSpecificAdvert(@Path("id") Long advertId);
     }
 
     public Observable<ApartmentsResponse> getApartments(double lbLat, double lbLong, double rtLat, double rtLong) {
         return service.getApartments(lbLat, lbLong, rtLat, rtLong);
     }
 
-    public Observable<PointsResponse> getPoints(double lbLat, double lbLong, double rtLat, double rtLong) {
-        return service.getPoints(lbLat, lbLong, rtLat, rtLong);
+    public Observable<PointsResponse> getPoints(double lbLat, double lbLong, double rtLat, double rtLong, int priceMin, int priceMax) {
+        return service.getPoints(lbLat, lbLong, rtLat, rtLong, priceMin, priceMax);
+    }
+
+    public Observable<SpecificAdvert> getSpecificAdvert(long advertId) {
+        return service.getSpecificAdvert(advertId);
     }
 }

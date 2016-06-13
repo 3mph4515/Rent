@@ -13,7 +13,7 @@ public class PointsResponse implements Parcelable {
 
     @SerializedName("features")
     @Expose
-    private List<Feature> features = new ArrayList<Feature>();
+    private List<AdvertPoint> advertPoints = new ArrayList<AdvertPoint>();
     @SerializedName("type")
     @Expose
     private String type;
@@ -21,15 +21,15 @@ public class PointsResponse implements Parcelable {
     /**
      * @return The features
      */
-    public List<Feature> getFeatures() {
-        return features;
+    public List<AdvertPoint> getAdvertPoints() {
+        return advertPoints;
     }
 
     /**
-     * @param features The features
+     * @param advertPoints The features
      */
-    public void setFeatures(List<Feature> features) {
-        this.features = features;
+    public void setAdvertPoints(List<AdvertPoint> advertPoints) {
+        this.advertPoints = advertPoints;
     }
 
     /**
@@ -53,7 +53,7 @@ public class PointsResponse implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeTypedList(this.features);
+        dest.writeTypedList(this.advertPoints);
         dest.writeString(this.type);
     }
 
@@ -61,7 +61,7 @@ public class PointsResponse implements Parcelable {
     }
 
     protected PointsResponse(Parcel in) {
-        this.features = in.createTypedArrayList(Feature.CREATOR);
+        this.advertPoints = in.createTypedArrayList(AdvertPoint.CREATOR);
         this.type = in.readString();
     }
 

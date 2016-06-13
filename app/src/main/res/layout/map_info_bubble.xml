@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/bubble_container"
+             xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="156dp"
+             android:layout_height="156dp">
+
+    <LinearLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:text=""/>
+
+        <ImageView
+            android:id="@+id/img_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/progress_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="true"
+            android:visibility="visible"/>
+    </FrameLayout>
+</FrameLayout>

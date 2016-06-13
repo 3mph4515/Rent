@@ -3,10 +3,12 @@ package io.flowerpower.rent.model.clustering;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.google.maps.android.clustering.ClusterItem;
 
-public class Feature implements Parcelable {
+public class AdvertPoint implements Parcelable, ClusterItem {
 
     @SerializedName("type")
     @Expose
@@ -90,25 +92,30 @@ public class Feature implements Parcelable {
         dest.writeParcelable(this.properties, flags);
     }
 
-    public Feature() {
+    public AdvertPoint() {
     }
 
-    protected Feature(Parcel in) {
+    protected AdvertPoint(Parcel in) {
         this.type = in.readString();
         this.id = (Integer) in.readValue(Integer.class.getClassLoader());
         this.geometry = in.readParcelable(Geometry.class.getClassLoader());
         this.properties = in.readParcelable(Properties.class.getClassLoader());
     }
 
-    public static final Parcelable.Creator<Feature> CREATOR = new Parcelable.Creator<Feature>() {
+    public static final Parcelable.Creator<AdvertPoint> CREATOR = new Parcelable.Creator<AdvertPoint>() {
         @Override
-        public Feature createFromParcel(Parcel source) {
-            return new Feature(source);
+        public AdvertPoint createFromParcel(Parcel source) {
+            return new AdvertPoint(source);
         }
 
         @Override
-        public Feature[] newArray(int size) {
-            return new Feature[size];
+        public AdvertPoint[] newArray(int size) {
+            return new AdvertPoint[size];
         }
     };
+
+    @Override
+    public LatLng getPosition() {
+        return new LatLng(getGeometry().getCoordinates().get(0), getGeometry().getCoordinates().get(1));
+    }
 }
