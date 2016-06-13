@@ -9,11 +9,11 @@
     <string name="three_room">3</string>
     <string name="four_more_room">4+</string>
     <string name="owner_only">Owner only</string>
+    <string name="metro_spn_prompt">Metro</string>
     <array name="metro_type">
-        <item>Metro</item>
-        <item>New metro</item>
+        <item>Near metro</item>
         <item>Red line</item>
         <item>Blue line</item>
+        <item>Metro</item>
     </array>
-
 </resources>

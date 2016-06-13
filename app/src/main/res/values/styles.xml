@@ -18,8 +18,9 @@
 
     <style name="Widget">
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:background">@drawable/base_widget_bg</item>
         <item name="android:textSize">@dimen/widget_default_text_size</item>
+        <item name="android:background">@drawable/base_widget_bg</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="Widget.CheckBox">

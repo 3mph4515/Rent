@@ -40,5 +40,6 @@ public class FilterRentFragment extends BaseFragment {
         List<String> items = Arrays.asList(getResources().getStringArray(R.array.metro_type));
         SpinnerAdapter adapter = new SpinnerAdapter(getContext(), items);
         metroSpinner.setAdapter(adapter);
+        metroSpinner.setSelection(adapter.getCount());
     }
 }

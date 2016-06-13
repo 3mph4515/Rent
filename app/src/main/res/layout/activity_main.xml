@@ -16,7 +16,7 @@
         android:id="@+id/filters_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bgColor"
+        android:background="@android:color/transparent"
         app:behavior_peekHeight="50dp"
         app:layout_behavior="@string/bottom_sheet_behavior" />
 
