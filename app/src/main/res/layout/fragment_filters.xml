@@ -1,163 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
-    android:clickable="false"
-    android:orientation="vertical">
-
-    <io.flowerpower.rent.ui.view.ShadowView
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        app:shadow_direction="top_bottom" />
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/bgColor"
-        android:orientation="vertical"
-        android:padding="@dimen/activity_default_padding">
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:orientation="vertical">
 
-        <TextView
-            style="@style/FilterLabel"
-            android:text="AAAA" />
-
-        <io.flowerpower.rent.ui.view.CheckableLinearLayout
-            android:id="@+id/container_rent_type"
+        <io.flowerpower.rent.ui.view.ShadowView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/filter_element_height"
-            android:background="@drawable/widget_container_selector"
-            android:clipChildren="false">
+            android:layout_height="2dp"
+            app:shadow_direction="top_bottom"/>
 
-            <CheckBox
-                android:id="@+id/rb_flat"
-                style="@style/Widget.CheckBox"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/base_widget_rounded_left_bg"
-                android:text="@string/apartment" />
-
-            <View
-                android:layout_width="@dimen/widget_stroke_width"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary" />
-
-            <CheckBox
-                android:id="@+id/rb_room"
-                style="@style/Widget.CheckBox"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/base_widget_rounded_right_bg"
-                android:text="@string/room" />
-
-        </io.flowerpower.rent.ui.view.CheckableLinearLayout>
-
-        <TextView
-            style="@style/FilterLabel"
-            android:text="AAAA" />
-
-        <io.flowerpower.rent.ui.view.CheckableLinearLayout
-            android:id="@+id/container_room_type"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/filter_element_height"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/widget_container_selector">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/bgColor"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_default_padding">
 
-            <CheckBox
-                android:id="@+id/rb_1_room"
-                style="@style/Widget.CheckBox"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/base_widget_rounded_left_bg"
-                android:text="@string/one_room" />
+            <TextView
+                style="@style/FilterLabel"
+                android:text="@string/rent_type_label"/>
 
-            <View
-                android:layout_width="@dimen/widget_stroke_width"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary" />
-
-            <CheckBox
-                android:id="@+id/rb_2_room"
-                style="@style/Widget.CheckBox"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/two_room" />
-
-            <View
-                android:layout_width="@dimen/widget_stroke_width"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary" />
-
-            <CheckBox
-                android:id="@+id/rb_3_room"
-                style="@style/Widget.CheckBox"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/three_room" />
-
-            <View
-                android:layout_width="@dimen/widget_stroke_width"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary" />
-
-            <CheckBox
-                android:id="@+id/rb_4more_room"
-                style="@style/Widget.CheckBox"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/base_widget_rounded_right_bg"
-                android:text="@string/four_more_room" />
-
-        </io.flowerpower.rent.ui.view.CheckableLinearLayout>
-
-        <TextView
-            style="@style/FilterLabel"
-            android:text="AAAA" />
-
-        <io.flowerpower.rent.ui.view.CheckableLinearLayout
-            android:id="@+id/container_owner_only"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/filter_element_height"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/widget_container_selector">
-
-            <CheckBox
-                android:id="@+id/rb_is_owner"
-                style="@style/Widget.CheckBox"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/base_widget_rounded_bg"
-                android:text="@string/owner_only" />
-        </io.flowerpower.rent.ui.view.CheckableLinearLayout>
-
-        <TextView
-            style="@style/FilterLabel"
-            android:text="AAAA" />
-
-        <io.flowerpower.rent.ui.view.CheckableLinearLayout
-            android:id="@+id/container_metro"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/filter_element_height"
-            android:layout_marginTop="1dp">
-
-            <Spinner
-                android:id="@+id/spn_metro"
-                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            <LinearLayout
+                android:id="@+id/container_rent_type"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:dropDownVerticalOffset="@dimen/filter_element_height"
-                android:prompt="@string/metro_spn_prompt" />
+                android:layout_height="@dimen/filter_element_height"
+                android:background="@drawable/widget_container_bg"
+                android:clipChildren="false">
 
-        </io.flowerpower.rent.ui.view.CheckableLinearLayout>
+                <CheckBox
+                    android:id="@+id/rb_flat"
+                    style="@style/Widget.CheckBox"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/base_widget_rounded_left_bg"
+                    android:text="@string/apartment"/>
+
+                <View
+                    android:layout_width="@dimen/widget_stroke_width"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"/>
+
+                <CheckBox
+                    android:id="@+id/rb_room"
+                    style="@style/Widget.CheckBox"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/base_widget_rounded_right_bg"
+                    android:text="@string/room"/>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/FilterLabel"
+                android:text="@string/rooms_number_label"/>
+
+            <LinearLayout
+                android:id="@+id/container_room_type"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/filter_element_height"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/widget_container_bg">
+
+                <CheckBox
+                    android:id="@+id/rb_1_room"
+                    style="@style/Widget.CheckBox"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/base_widget_rounded_left_bg"
+                    android:text="@string/one_room"/>
+
+                <View
+                    android:layout_width="@dimen/widget_stroke_width"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"/>
+
+                <CheckBox
+                    android:id="@+id/rb_2_room"
+                    style="@style/Widget.CheckBox"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/two_room"/>
+
+                <View
+                    android:layout_width="@dimen/widget_stroke_width"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"/>
+
+                <CheckBox
+                    android:id="@+id/rb_3_room"
+                    style="@style/Widget.CheckBox"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/three_room"/>
+
+                <View
+                    android:layout_width="@dimen/widget_stroke_width"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"/>
+
+                <CheckBox
+                    android:id="@+id/rb_4more_room"
+                    style="@style/Widget.CheckBox"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/base_widget_rounded_right_bg"
+                    android:text="@string/four_more_room"/>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/FilterLabel"
+                android:text="@string/owner_only_label"/>
+
+            <LinearLayout
+                android:id="@+id/container_owner_only"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/filter_element_height"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/widget_container_bg">
+
+                <CheckBox
+                    android:id="@+id/rb_is_owner"
+                    style="@style/Widget.CheckBox"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/base_widget_rounded_bg"
+                    android:text="@string/owner_only"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_price"
+                style="@style/FilterLabel"
+                android:text="@string/price_label"/>
+
+            <com.appyvet.rangebar.RangeBar
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rnb_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:connectingLineColor="@color/colorPrimary"
+                custom:pinColor="@color/colorPrimary"
+                custom:pinMaxFont="10sp"
+                custom:pinMinFont="10sp"
+                custom:pinRadius="14dp"
+                custom:rangeBar="true"
+                custom:selectorColor="@color/colorPrimary"
+                custom:selectorSize="10dp"
+                custom:tickEnd="1000"
+                custom:tickInterval="10"
+                custom:tickStart="100"/>
+
+            <TextView
+                style="@style/FilterLabel"
+                android:text="@string/metro_label"/>
+
+            <LinearLayout
+                android:id="@+id/container_metro"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/filter_element_height"
+                android:background="@drawable/widget_container_bg">
+
+                <Spinner
+                    android:id="@+id/spn_metro"
+                    style="@style/Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/FilterLabel"
+                android:text="@string/address_label"/>
+
+            <io.flowerpower.rent.ui.view.AddressTextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/filter_element_height"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,10 +1,10 @@
 <resources>
     <dimen name="activity_default_padding">16dp</dimen>
-    <dimen name="widget_default_text_size">16sp</dimen>
+    <dimen name="widget_default_text_size">17sp</dimen>
     <dimen name="widget_stroke_width">1dp</dimen>
     <dimen name="widget_corners_radius">10dp</dimen>
 
     <!--FilterRentFragment-->
-    <dimen name="filter_element_height">48dp</dimen>
+    <dimen name="filter_element_height">40dp</dimen>
 
 </resources>

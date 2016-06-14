@@ -1,10 +1,14 @@
 <resources>
 
     <style name="AppTheme.NoActionBar">
-
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:dropDownWidth">match_parent</item>
+        <item name="android:overlapAnchor">false</item>
     </style>
 </resources>

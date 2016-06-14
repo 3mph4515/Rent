@@ -2,18 +2,32 @@
     <string name="app_name">Rent</string>
 
     <!--FilterRentFragment-->
+    <string name="rent_type_label">Rent type</string>
     <string name="apartment">Apartment</string>
     <string name="room">Room</string>
+    <string name="rooms_number_label">Number of rooms</string>
     <string name="one_room">1</string>
     <string name="two_room">2</string>
     <string name="three_room">3</string>
     <string name="four_more_room">4+</string>
+    <string name="owner_only_label">Owner only</string>
     <string name="owner_only">Owner only</string>
-    <string name="metro_spn_prompt">Metro</string>
+    <string name="price_label" formatted="false">Price: %1d$ - %2d$</string>
+    <string name="metro_label">Metro</string>
+    <string name="address_label">City, street</string>
     <array name="metro_type">
         <item>Near metro</item>
         <item>Red line</item>
         <item>Blue line</item>
-        <item>Metro</item>
+        <item>Not selected</item>
+    </array>
+    <array name="cities">
+        <item>Minsk</item>
+        <item>Brest</item>
+        <item>Vitebsk</item>
+        <item>Gomel</item>
+        <item>Mogilev</item>
+        <item>Grodno</item>
+        <item>Not selected</item>
     </array>
 </resources>
